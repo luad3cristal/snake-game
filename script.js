@@ -11,7 +11,7 @@ const audio = new Audio("../assets/audio.mp3")
 //definindo o tamanho da cobra
 const size = 30
 
-const initialPosition = { x: 270, y: 240 }
+const initialPosition = { x: 60, y: 60 }
 //definindo a posição a partir da array com numeros multiplos de 30
 let snake = [initialPosition]
 
@@ -220,19 +220,26 @@ gameLoop()
 
 //analisa tecla pressionada  e indica a direção a ser seguida
 document.addEventListener("keydown", ({ key }) => {
-  if (key == "ArrowRight" && direction != "left") {
+  console.log(key)
+  if (
+    (key == "ArrowRight" || key == "d" || key == "D") &&
+    direction != "left"
+  ) {
     direction = "right"
   }
 
-  if (key == "ArrowLeft" && direction != "right") {
+  if (
+    (key == "ArrowLeft" || key == "a" || key == "A") &&
+    direction != "right"
+  ) {
     direction = "left"
   }
 
-  if (key == "ArrowUp" && direction != "down") {
+  if ((key == "ArrowUp" || key == "w" || key == "W") && direction != "down") {
     direction = "up"
   }
 
-  if (key == "ArrowDown" && direction != "up") {
+  if ((key == "ArrowDown" || key == "s" || key == "S") && direction != "up") {
     direction = "down"
   }
 })
