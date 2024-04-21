@@ -20,9 +20,11 @@ body {
 
 canvas {
   background-color: #111;
+  filter: blur(4px);
 }
 
 .score {
+  visibility: hidden;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -56,6 +58,11 @@ canvas {
 .final-score {
   font-weight: 500;
   font-size: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-play {
@@ -73,6 +80,40 @@ canvas {
   align-items: center;
   justify-content: center;
   gap: 10px;
+
+  cursor: pointer;
+}
+
+.start-menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  z-index: 2;
+
+  background-color: rgba(14, 14, 14, 0.8);
+  width: 400px;
+  height: 300px;
+}
+
+.start-menu h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+}
+
+.start-menu button {
+  width: 100px;
+  height: 50px;
+  border: 1px solid white;
+
+  background-color: rgba(255, 255, 255);
+
+  font-size: 1.2rem;
+  font-weight: 500;
 
   cursor: pointer;
 }

@@ -6,6 +6,12 @@ const finalScore = document.querySelector(".final-score > span")
 const menu = document.querySelector(".menu-screen")
 const buttonPlay = document.querySelector(".btn-play")
 
+const b1 = document.querySelector(".b1")
+const b2 = document.querySelector(".b2")
+const b3 = document.querySelector(".b3")
+const level = document.querySelector(".start-menu")
+const points = document.querySelector(".score")
+
 const audio = new Audio("../assets/audio.mp3")
 
 //definindo o tamanho da cobra
@@ -32,44 +38,36 @@ const randomPosition = () => {
 }
 
 //varia a cor da comida
-const randomColor = () => {
-  const red = randomNumber(0, 250)
-  const green = randomNumber(0, 250)
-  const blue = randomNumber(0, 250)
-
-  return `rgb(${red}, ${green}, ${blue})`
-}
 
 //define a posição e a cor da comida
 const food = {
   x: randomPosition(),
   y: randomPosition(),
-  color: randomColor(),
 }
 
 //declara a variavel direction e loopId, sem atribuir valor algum
-let direction, loopId
+let direction, loopId, speed
 
 //desenha a comida
 const drawFood = () => {
-  const { x, y, color } = food
+  const { x, y } = food
 
-  ctx.shadowColor = color
+  ctx.shadowColor = "red"
   ctx.shadowBlur = 5
-  ctx.fillStyle = color
+  ctx.fillStyle = "red"
   ctx.fillRect(x, y, size, size)
   ctx.shadowBlur = 0
 }
 
 //criando a cobra
 const drawSnake = () => {
-  ctx.fillStyle = "#ddd"
+  ctx.fillStyle = "#39e75f"
 
   //define a posição e o tamanho da cobra percorrendo toda a array
   snake.forEach((position, index) => {
     //muda a cor da cabeça da cobra
     if (index == snake.length - 1) {
-      ctx.fillStyle = "white"
+      ctx.fillStyle = "#83f28f"
     }
     ctx.fillRect(position.x, position.y, size, size)
   })
@@ -79,6 +77,9 @@ const drawSnake = () => {
 const moveSnake = () => {
   //se direction nao tiver valor, retorna pro inicio da função
   if (!direction) return
+
+  //se speed não tiver valor, retorna
+  if (!speed) return
 
   //pega o ultimo valor da cobra, no caso a cabeça. snake.at(-1) também funciona
   const head = snake[snake.length - 1]
@@ -154,7 +155,6 @@ const checkEat = () => {
     //se não, segue a comida assume esse valor
     food.x = x
     food.y = y
-    food.color = randomColor()
   }
 }
 
@@ -182,6 +182,7 @@ const checkCollision = () => {
 //define o game over
 const gameOver = () => {
   direction = undefined
+  speed = undefined
 
   menu.style.display = "flex"
   finalScore.innerText = score.innerText
@@ -212,7 +213,7 @@ const gameLoop = () => {
   //cria um loop executando a função com um time de 0.3s. A ideia do loopId é resetar o codigo e evitar bugs
   loopId = setTimeout(() => {
     gameLoop()
-  }, 300)
+  }, speed)
 }
 
 //inicializa o joguinho
@@ -220,7 +221,6 @@ gameLoop()
 
 //analisa tecla pressionada  e indica a direção a ser seguida
 document.addEventListener("keydown", ({ key }) => {
-  console.log(key)
   if (
     (key == "ArrowRight" || key == "d" || key == "D") &&
     direction != "left"
@@ -246,8 +246,42 @@ document.addEventListener("keydown", ({ key }) => {
 
 buttonPlay.addEventListener("click", () => {
   score.innerText = "00"
+  points.style.visibility = "hidden"
+
   menu.style.display = "none"
-  canvas.style.filter = "none"
+  level.style.display = "flex"
 
   snake = [initialPosition]
+  food.x = randomPosition()
+  food.y = randomPosition()
+})
+
+b1.addEventListener("click", () => {
+  points.style.visibility = "visible"
+
+  level.style.display = "none"
+  canvas.style.filter = "none"
+
+  speed = 550
+  direction = "right"
+})
+
+b2.addEventListener("click", () => {
+  points.style.visibility = "visible"
+
+  level.style.display = "none"
+  canvas.style.filter = "none"
+
+  speed = 400
+  direction = "right"
+})
+
+b3.addEventListener("click", () => {
+  points.style.visibility = "visible"
+
+  level.style.display = "none"
+  canvas.style.filter = "none"
+
+  speed = 200
+  direction = "right"
 })
