@@ -117,3 +117,24 @@ canvas {
 
   cursor: pointer;
 }
+
+#tablet,
+#phone {
+  position: fixed;
+  visibility: hidden;
+}
+
+@media (max-width: 769px) {
+  canvas {
+    width: 520px;
+    height: 520px;
+  }
+}
+
+/* versão do celular */
+@media (max-width: 426px) {
+  canvas {
+    width: 360px;
+    height: 510px;
+  }
+}

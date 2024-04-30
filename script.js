@@ -1,3 +1,4 @@
+// canvas do computador
 const canvas = document.querySelector("canvas")
 const ctx = canvas.getContext("2d")
 
@@ -37,9 +38,7 @@ const randomPosition = () => {
   return Math.round(number / 30) * 30
 }
 
-//varia a cor da comida
-
-//define a posição e a cor da comida
+//define a posição da comida
 const food = {
   x: randomPosition(),
   y: randomPosition(),
@@ -109,7 +108,7 @@ const moveSnake = () => {
 }
 
 //desenha linhas no joguinho
-const drawGrid = () => {
+let drawGrid = () => {
   ctx.lineWidth = 1
   ctx.strokeStyle = "#191919"
 
@@ -286,6 +285,7 @@ b3.addEventListener("click", () => {
   direction = "right"
 })
 
+//reconhecendo touch
 document.addEventListener("touchstart", handleTouchStart, false)
 document.addEventListener("touchmove", handleTouchMove, false)
 
@@ -337,4 +337,26 @@ function handleTouchMove(evt) {
   /* reset values */
   xDown = null
   yDown = null
+}
+
+const width = screen.width
+
+if (screen.width <= 426) {
+  drawGrid = () => {
+    ctx.lineWidth = 1
+    ctx.strokeStyle = "#191919"
+
+    for (let i = 30; i < canvas.width; i = i + 30) {
+      //cria as linhas na vertical
+      ctx.beginPath()
+      ctx.lineTo(i, 0)
+      ctx.lineTo(i, 600)
+      ctx.stroke()
+
+      ctx.beginPath()
+      ctx.lineTo(0, i)
+      ctx.lineTo(600, i)
+      ctx.stroke()
+    }
+  }
 }
