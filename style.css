@@ -118,23 +118,64 @@ canvas {
   cursor: pointer;
 }
 
-#tablet,
-#phone {
-  position: fixed;
-  visibility: hidden;
+h2 {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  z-index: 3;
 }
 
 @media (max-width: 769px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .score {
+    position: fixed;
+    top: 5px;
+  }
+
   canvas {
-    width: 520px;
-    height: 520px;
+    margin-top: 45px;
+    margin-bottom: 0;
+
+    width: 490px;
+    height: 490px;
   }
 }
 
 /* versão do celular */
-@media (max-width: 426px) {
+@media (max-width: 505px) {
   canvas {
     width: 360px;
-    height: 510px;
+    height: 390px;
+  }
+
+  .score {
+    top: 60px;
+  }
+
+  .start-menu {
+    width: 330px;
+    height: 270px;
+  }
+}
+
+@media (max-width: 370px) {
+  canvas,
+  .score,
+  .menu-screen,
+  .start-menu {
+    display: none;
+  }
+  h2 {
+    display: flex;
   }
 }

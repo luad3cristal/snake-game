@@ -12,6 +12,7 @@ const b2 = document.querySelector(".b2")
 const b3 = document.querySelector(".b3")
 const level = document.querySelector(".start-menu")
 const points = document.querySelector(".score")
+const h2 = document.querySelector("h2")
 
 const audio = new Audio("../assets/audio.mp3")
 
@@ -339,24 +340,3 @@ function handleTouchMove(evt) {
   yDown = null
 }
 
-const width = screen.width
-
-if (screen.width <= 426) {
-  drawGrid = () => {
-    ctx.lineWidth = 1
-    ctx.strokeStyle = "#191919"
-
-    for (let i = 30; i < canvas.width; i = i + 30) {
-      //cria as linhas na vertical
-      ctx.beginPath()
-      ctx.lineTo(i, 0)
-      ctx.lineTo(i, 600)
-      ctx.stroke()
-
-      ctx.beginPath()
-      ctx.lineTo(0, i)
-      ctx.lineTo(600, i)
-      ctx.stroke()
-    }
-  }
-}
