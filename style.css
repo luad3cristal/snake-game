@@ -159,13 +159,12 @@ h2 {
   }
 
   canvas {
-    margin-top: -5%;
     width: 360px;
     height: 390px;
   }
 
   .score {
-    top: 30px;
+    top: 10%;
   }
 
   .start-menu {
