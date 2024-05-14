@@ -158,14 +158,17 @@ h2 {
     overflow: hidden;
   }
 
+  .score {
+    margin-top: 10px;
+  }
+
   canvas {
+    margin-top: 2px;
+    margin-bottom: 0;
+
     width: 360px;
     height: 390px;
   }
-
-  /* .score {
-    margin-top: -10%;
-  } */
 
   .start-menu {
     margin-top: 25%;
