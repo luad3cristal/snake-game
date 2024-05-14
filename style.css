@@ -29,6 +29,8 @@ canvas {
   align-items: center;
   flex-direction: column;
   font-size: 1.2rem;
+
+  margin-top: 20px;
 }
 
 .score-value {
@@ -138,12 +140,11 @@ h2 {
   }
 
   .score {
-    position: relative;
-    top: 5%;
+    margin-top: 30px;
   }
 
   canvas {
-    margin-top: 45px;
+    margin-top: 10px;
     margin-bottom: 0;
 
     width: 490px;
@@ -157,30 +158,22 @@ h2 {
     overflow: hidden;
   }
 
-  .score {
-    position: absolute;
-    top: 45px;
-  }
-
-  .menu-screen,
-  .start-menu,
-  canvas {
-    position: absolute;
-    top: 100px;
-  }
-  
   canvas {
     width: 360px;
     height: 390px;
   }
 
+  /* .score {
+    margin-top: -10%;
+  } */
+
   .start-menu {
-    margin-top: -5%;
+    margin-top: 25%;
     width: 330px;
     height: 270px;
   }
 }
-
+/* 
 @media (max-width: 370px) {
   canvas,
   .score,
@@ -191,4 +184,4 @@ h2 {
   h2 {
     display: flex;
   }
-}
+} */
