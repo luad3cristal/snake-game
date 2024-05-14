@@ -138,8 +138,8 @@ h2 {
   }
 
   .score {
-    position: fixed;
-    top: 5px;
+    position: relative;
+    top: 5%;
   }
 
   canvas {
@@ -158,13 +158,16 @@ h2 {
     width: 100vw;
   }
 
+  .score,
+  .menu-screen,
+  .start-menu,
+  canvas {
+    margin: auto 0;
+  }
+
   canvas {
     width: 360px;
     height: 390px;
-  }
-
-  .score {
-    top: 10%;
   }
 
   .start-menu {
