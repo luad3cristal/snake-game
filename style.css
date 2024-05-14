@@ -153,6 +153,12 @@ h2 {
 
 /* versão do celular */
 @media (max-width: 505px) {
+  body {
+    overflow-y: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
+
   canvas {
     width: 360px;
     height: 390px;
