@@ -155,15 +155,16 @@ h2 {
 @media (max-width: 505px) {
   body {
     overflow: hidden;
-    width: 100vw;
   }
 
   .score {
-    margin-top: -23%;
+    position: absolute;
+    top: 15px;
   }
 
   canvas {
-    margin-top: 10%;
+    position: absolute;
+    top: 70px;
     width: 360px;
     height: 390px;
   }
