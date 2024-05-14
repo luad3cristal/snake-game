@@ -154,7 +154,7 @@ h2 {
 /* versão do celular */
 @media (max-width: 505px) {
   body {
-    overflow-y: hidden;
+    overflow: hidden;
     width: 100vw;
   }
 
