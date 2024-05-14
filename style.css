@@ -158,14 +158,12 @@ h2 {
     width: 100vw;
   }
 
-  .score,
-  .menu-screen,
-  .start-menu,
-  canvas {
-    margin: auto 0;
+  .score {
+    margin-top: -23%;
   }
 
   canvas {
+    margin-top: 10%;
     width: 360px;
     height: 390px;
   }
