@@ -160,6 +160,7 @@ h2 {
 
   .score {
     margin-top: -50px;
+    margin-bottom: 5%;
   }
 
   canvas {
@@ -176,15 +177,17 @@ h2 {
     height: 270px;
   }
 }
-/* 
+
 @media (max-width: 370px) {
   canvas,
   .score,
-  .menu-screen,
-  .start-menu {
+  .start-menu,
+  .game-over,
+  .final-score,
+  .btn-play {
     display: none;
   }
   h2 {
     display: flex;
   }
-} */
+}

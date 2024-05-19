@@ -222,16 +222,12 @@ gameLoop()
 //analisa tecla pressionada  e indica a direção a ser seguida
 document.addEventListener("keydown", ({ key }) => {
   if (
-    (key == "ArrowRight" || key == "d" || key == "D") &&
-    direction != "left"
-  ) {
+    (key == "ArrowRight" || key == "d" || key == "D") && direction != "left") {
     direction = "right"
   }
 
   if (
-    (key == "ArrowLeft" || key == "a" || key == "A") &&
-    direction != "right"
-  ) {
+    (key == "ArrowLeft" || key == "a" || key == "A") && direction != "right") {
     direction = "left"
   }
 
